@@ -26,10 +26,6 @@ myo
 for the arduino
 dynamixel_serial
 
-# Simscape Preperation
-Open simulink -> open "program..." -> model something... ->
 
-# Running the project
-...
 
 - Enjoy
