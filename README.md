@@ -10,12 +10,12 @@ Simulink & Simscape (including Simscape multibody)
 Cpp...
 
 # Required Cpp packages
-armadillo 10.0.2
-SDL 2.0.12
-SDL2_ttf
-SDL2_font
-SDL2_image
-myo
+armadillo 10.0.2 \\
+SDL 2.0.12 \\
+SDL2_ttf \\
+SDL2_font \\
+SDL2_image \\
+myo \\
 
 for the arduino
 dynamixel_serial
