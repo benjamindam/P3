@@ -25,7 +25,3 @@ myo
 
 for the arduino
 dynamixel_serial
-
-
-
-- Enjoy
