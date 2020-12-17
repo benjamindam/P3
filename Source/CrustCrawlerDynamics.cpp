@@ -31,7 +31,7 @@ void CrustCrawlerDynamics::UpdatePos()
     bool start = false;
     std::string message;
     message = serial.readLine();
-
+    //A1 20 V1 20 A2 20 V2 20:
    // std::cout << message << std::endl;
     std::string number;
     std::string vnumber;
@@ -121,10 +121,10 @@ void CrustCrawlerDynamics::send_torque(float dtheta[4])
 
     if (torque[0] >= 0)
     {
-        if (dThetaref[0] > 0) {
+        if (dtheta[0] > 0) {
             PWM[0] = 231 * torque[0] + 128 * dThetaref[0];
         }
-        else if (dThetaref[0] < 0) {
+        else if (dtheta[0] < 0) {
             PWM[0] = 231 * torque[0] + 128 * dThetaref[0];
         }
         else {

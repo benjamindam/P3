@@ -20,7 +20,7 @@ void MyoController::onPose(myo::Myo* myo, uint64_t timestamp, myo::Pose pose)
 
 void MyoController::onEmgData(myo::Myo* myo, uint64_t timestamp, const int8_t* emg)
 {
-    if (count < 20) {
+    if (count < 100) {
         std::vector<int> temp;
         for (int i = 0; i < 8; i++)
         {
@@ -30,16 +30,16 @@ void MyoController::onEmgData(myo::Myo* myo, uint64_t timestamp, const int8_t* e
         CurrentEMG.push_back(temp);
         count++;
     }
-    else if (CurrentEMG.size() == 20) {
+    else if (CurrentEMG.size() == 100) {
         std::vector<int> temp;
         for (int i = 0; i < 8; i++)
         {
             int sum = 0;
-            for (int j = 0; j < 20; j++)
+            for (int j = 0; j < 100; j++)
             {
                 sum += CurrentEMG[j][i];
             }
-            averageEMG[i] = sum / 20;
+            averageEMG[i] = sum / 100;
             temp.push_back(abs(static_cast<long int>(emg[i])));
 
 
@@ -52,7 +52,6 @@ void MyoController::onEmgData(myo::Myo* myo, uint64_t timestamp, const int8_t* e
         float right = averageEMG[3] * 2.7 / (1 + averageEMG[7] + averageEMG[1]);
         float left = (averageEMG[0] + averageEMG[7]) / (averageEMG[5] + 1);
         float down = (1 * (averageEMG[0] + averageEMG[1] + averageEMG[2])) / (1 + averageEMG[5] + averageEMG[6]);
-        float rest = (averageEMG[4] + averageEMG[5] + averageEMG[6] + averageEMG[7]) / 20;
 
 
         if (up + right + left + down <= 5) {

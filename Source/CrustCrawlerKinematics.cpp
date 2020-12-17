@@ -3,7 +3,8 @@
 CrustCrawlerKinematics::Pos CrustCrawlerKinematics::ForwardKinematics(float t1,float t2,float t3,float t4) {
 	float z = TargetMatrix(2, 3);
 	float y = TargetMatrix(1, 3);
-	t4 = (90 * PI / 180 - t2 - t3) + atan(abs((z - ShoulderHeightFromBase)) / abs((ShoulderDistanceFromBase - y)));
+	t4 = (90 * PI / 180 - t2 - t3) + atan((z - ShoulderHeightFromBase)) / abs((ShoulderDistanceFromBase - y));
+	
 	t1 *= PI / 180;
 	t2 *= PI / 180;
 	t3 *= PI / 180;
@@ -28,8 +29,8 @@ CrustCrawlerKinematics::Angles CrustCrawlerKinematics::InverseKinematics(float x
 
 	float L = sqrt((x * x) + (y * y) + (z * z));
 	float phi1 = asin(z / L);
-	float phi2 = acos(((218.5 * 218.5) + (L * L) - 145.0 * 145) / (2 * 218.5 * L));
-	float phi3 = acos(((218.5 * 218.5) + (145.0 * 145) - L * L) / (2 * 218.5 * 145));
+	float phi2 = acos(((220 * 220) + (L * L) - 147.0 * 147) / (2 * 220 * L)); //220 og 147
+	float phi3 = acos(((220 * 220) + (147.0 * 147) - L * L) / (2 * 220 * 147));
 	float EEz = TargetMatrix(2, 3);
 	float EEy = TargetMatrix(1, 3);
 	angles.theta1 = atan2(-x, y) * 180 / PI;

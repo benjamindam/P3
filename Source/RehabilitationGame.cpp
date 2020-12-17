@@ -243,7 +243,7 @@ void RehabilitationGame::update(MyoController& collector)
 			CrustCrawlerKinematics::Pos pos;
 			pos = CCK.ForwardKinematics(Dynamics.angle[0] * 180 / 3.14, Dynamics.angle[1] * 180 / 3.14, Dynamics.angle[2] * 180 / 3.14, Dynamics.angle[3] * 180 / 3.14);
 			if (numberOfiterations > 50) {
-				std::cout << "x " << pos.x << " z " << pos.z << std::endl;
+				std::cout << Dynamics.angle[3] * 180/3.14 << std::endl;
 			}
 			
 			UpdateGameObject(player);
@@ -353,7 +353,7 @@ void RehabilitationGame::GameSettings()
 	GameSettingsPoints.w = 181;
 	GameSettingsPoints.h = 50;
 	SDL_Rect GameSettingsDone;
-	GameSettingsDone.x = 145;
+	GameSettingsDone.x = 147;
 	GameSettingsDone.y = 270;
 	GameSettingsDone.w = 208;
 	GameSettingsDone.h = 40;

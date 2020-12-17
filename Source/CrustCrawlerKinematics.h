@@ -26,9 +26,8 @@ public:
 	Trajectory TrajectoryGeneration(float goalAngles[4], float currentAngles[4], float currentVelocity[4]);
 
 
-protected:
-	float PI = arma::datum::pi;
 private:
+	float PI = arma::datum::pi;
 
 
 

@@ -1,6 +1,6 @@
 #include "Rehabilitation_GUI.h"
 
-void Rehabilitation_GUI::Update()
+void Rehabilitation_GUI::Update(int input)
 {
 	while (quit == false) {
 		MainMenu();
@@ -124,7 +124,7 @@ void Rehabilitation_GUI::MainMenu()
 
 				SDL_DestroyWindow(window);
 				myo::Hub hub("com.example.hello-myo");
-				std::cout << "Attempting to find a Msyo..." << std::endl;
+				std::cout << "Attempting to find a Myo..." << std::endl;
 				// Next, we attempt to find a Myo to use. If a Myo is already paired in Myo Connect, this will return that Myo
 				// immediately.
 				// waitForMyo() takes a timeout value in milliseconds. In this case we will try to find a Myo for 10 seconds, and

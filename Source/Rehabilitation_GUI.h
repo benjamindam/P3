@@ -7,14 +7,13 @@
 class Rehabilitation_GUI
 {
 public:
-	void Update();
+	void Update(int input);
 	//void Settings();
 	void MainMenu();
 	void Clean();
 private:
 	//variables to use for the robot
-	float armlength = 63;
-	int functional_level = 2;
+	
 	bool quit = false;
 	int mousecoordinatex;
 	int mousecoordinatey;

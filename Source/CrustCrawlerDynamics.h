@@ -7,8 +7,8 @@ public:
 	float dThetaref[4];                                                             //
 	float ddThetaref[4];                                                            //
 	
-	float kp[4] = { 60, 100, 300, 1000 };                                                    //
-	float kd[4] = { 19, 30, 35,  30 };
+	float kp[4] = { 65, 100, 303, 1000 };                                                    //
+	float kd[4] = { 17, 30, 33,  30 };
 	//
 	float m[4];                                                                     //
 	float g[4];
@@ -28,7 +28,5 @@ public:
 	void updateg();
 	void send_torque(float dtheta[4]);
 	void control(float theta[4], float dtheta[4], float ddtheta[4]);
-private:
-
 };
 
